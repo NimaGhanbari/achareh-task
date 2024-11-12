@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "66ef786b-db36-4e9b-b83c-1409a23b0d71",
+		"name": "achareh_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25774936"
+	},
+	"item": [
+		{
+			"name": "POST Determinate Action",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\":\"09035113419\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/determinate-action/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"determinate-action",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Registeration User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\":\"09035113419\",\r\n    \"verification_code\":\"687795\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/registeration/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"registeration",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH User Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNDExOTE5LCJpYXQiOjE3MzE0MDgzMTksImp0aSI6ImYxODliYTQ2ZDQ2OTQ5M2M5N2RmZWMxNjEyNTA2NjAxIiwidXNlcl9pZCI6OH0.L_rIV77dF9-YFhfy-fRvFyZMoUCCworZ28lL4eGDUz8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"نیما\",\r\n    \"last_name\":\"قنبری\",\r\n    \"email\":\"nimadfm1400@gmail.com\",\r\n    \"password\":\"nima7898\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/user-info/09035113419/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"user-info",
+						"09035113419",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Login User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\":\"09035113419\",\r\n    \"password\":\"nima7898\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
