@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 import redis
+from kavenegar import KavenegarAPI
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -15,6 +16,10 @@ DEBUG = os.getenv("DEBUG")
 ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'user.User'
+
+KAVENEGAR_API_KEY = os.getenv("KAVENEGAR_API_KEY")
+
+REDIS_TTL_REGISTERATION = os.getenv("REDIS_TTL_REGISTERATION")
 
 
 THIRD_PARTY_APPS = [
@@ -51,8 +56,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # Rate Limiting Middleware
-    'user.middleware.RateLimitMiddleware'
 ]
 
 ROOT_URLCONF = "achareh_project.urls"
@@ -74,7 +77,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "achareh_project.wsgi.application"
-
 
 
 LOGGING = {
@@ -119,7 +121,6 @@ LOGGING = {
     },
 
 }
-
 
 
 DATABASES = {
@@ -186,3 +187,5 @@ REDIS_HOST = os.getenv("REDIS_HOST")
 REDIS_PORT = os.getenv("REDIS_PORT")
 redis_client = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
+
+KAVENEGAR_APP = KavenegarAPI(KAVENEGAR_API_KEY)

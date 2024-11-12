@@ -1,5 +1,6 @@
 from rest_framework.exceptions import APIException
 
+
 class CustomValidationException(APIException):
     def __init__(self, detail, status_code):
         self.detail = detail
