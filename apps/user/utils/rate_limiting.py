@@ -2,9 +2,9 @@ from achareh_project.settings import redis_client
 
 class RateLimiter:
     def __init__(self, ip_address: str, action_type: str):
-        self.ip_address = ip_address
-        self.action_type = action_type
-        self.prefix = f"{self.action_type}:{self.ip_address}"
+        self.ip_address: str = ip_address
+        self.action_type: str = action_type
+        self.prefix: str = f"{self.action_type}:{self.ip_address}"
 
     def _get_request_count(self) -> int:
         return int(redis_client.get(self.prefix) or 0)
